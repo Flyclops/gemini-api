@@ -45,26 +45,26 @@ type GenericResponse struct {
 }
 
 type Order struct {
-	OrderId           string   `json:"order_id"`
-	ClientOrderId     string   `json:"client_order_id"`
-	Symbol            string   `json:"symbol"`
-	Exchange          string   `json:"exchange"`
-	Price             float64  `json:"price,string"`
-	AvgExecutionPrice float64  `json:"avg_execution_price,string"`
-	Side              string   `json:"side"`
-	Type              string   `json:"type"`
-	Options           []string `json:"options"`
-	//	Timestamp         string    `json:"timestamp"`
-	Timestampms     int64     `json:"timestampms"`
-	TimestampmsT    time.Time `json:"timestampmst,omitempty"`
-	IsLive          bool      `json:"is_live"`
-	IsCancelled     bool      `json:"is_cancelled"`
-	Reason          string    `json:"reason"`
-	WasForced       bool      `json:"was_forced"`
-	ExecutedAmount  float64   `json:"executed_amount,string"`
-	RemainingAmount float64   `json:"remaining_amount,string"`
-	OriginalAmount  float64   `json:"original_amount,string"`
-	IsHidden        bool      `json:"is_hidden"`
+	OrderId           string      `json:"order_id"`
+	ClientOrderId     string      `json:"client_order_id"`
+	Symbol            string      `json:"symbol"`
+	Exchange          string      `json:"exchange"`
+	Price             float64     `json:"price,string"`
+	AvgExecutionPrice float64     `json:"avg_execution_price,string"`
+	Side              string      `json:"side"`
+	Type              string      `json:"type"`
+	Options           []string    `json:"options"`
+	Timestampms       int64       `json:"timestampms"`
+	TimestampmsT      time.Time   `json:"timestampmst,omitempty"`
+	IsLive            bool        `json:"is_live"`
+	IsCancelled       bool        `json:"is_cancelled"`
+	Reason            string      `json:"reason"`
+	WasForced         bool        `json:"was_forced"`
+	ExecutedAmount    float64     `json:"executed_amount,string"`
+	RemainingAmount   float64     `json:"remaining_amount,string"`
+	OriginalAmount    float64     `json:"original_amount,string"`
+	IsHidden          bool        `json:"is_hidden"`
+	Trades            []PastTrade `json:"trades"`
 }
 
 type Trade struct {

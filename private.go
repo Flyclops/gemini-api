@@ -160,9 +160,10 @@ func (api *Api) OrderStatus(orderId string) (Order, error) {
 
 	url := api.url + order_status_URI
 	params := map[string]interface{}{
-		"request":  order_status_URI,
-		"nonce":    nonce(),
-		"order_id": orderId,
+		"request":        order_status_URI,
+		"nonce":          nonce(),
+		"order_id":       orderId,
+		"include_trades": true,
 	}
 
 	logger.Debug("func OrderStatus",
@@ -180,6 +181,7 @@ func (api *Api) OrderStatus(orderId string) (Order, error) {
 	if err := json.Unmarshal(body, &order); err != nil {
 		return order, err
 	}
+	fmt.Println(string(body))
 
 	logger.Debug("func OrderStatus: unmarshal",
 		fmt.Sprintf("order:%v", order),
